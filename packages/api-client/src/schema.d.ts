@@ -11,8 +11,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Health */
-        get: operations["health_api_v1_health_get"];
+        /** Health Endpoint */
+        get: operations["health_endpoint_api_v1_health_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -43,7 +43,7 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    health_api_v1_health_get: {
+    health_endpoint_api_v1_health_get: {
         parameters: {
             query?: never;
             header?: never;

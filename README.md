@@ -26,6 +26,13 @@ Servicios:
 
 El frontend consulta `GET /api/v1/health` y muestra si la API está disponible.
 
+En Vercel, la API debe recibir el origen exacto del frontend, sin rutas. Para aceptar más de
+un dominio se pueden separar por comas:
+
+```env
+FRONTEND_URLS=https://web.example.com,https://web-preview.example.com
+```
+
 ## Verificación
 
 ```bash
