@@ -266,8 +266,6 @@ button {
   margin-bottom: 2.6rem;
 }
 
-.eyebrow,
-.card-kicker,
 .subject-code,
 .agenda-type {
   margin: 0;
@@ -280,7 +278,7 @@ button {
 
 .page-header h1 {
   max-width: 47rem;
-  margin: 0.35rem 0 0;
+  margin: 0;
   font-family: "Newsreader", Georgia, serif;
   font-size: clamp(3rem, 6vw, 5.25rem);
   font-weight: 500;
@@ -442,16 +440,11 @@ button {
   content: "";
 }
 
-.attention-card .card-kicker {
-  color: #9fe0d1;
-}
-
 .attention-card h2 {
   max-width: 12rem;
-  margin-top: 1.5rem;
 }
 
-.attention-card > p:not(.card-kicker) {
+.attention-card > p {
   position: relative;
   z-index: 1;
   margin: 1rem 0 2.2rem;

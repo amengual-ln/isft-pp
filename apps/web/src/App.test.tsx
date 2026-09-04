@@ -21,10 +21,10 @@ test("permite consultar mesas y confirmar una inscripción fake", async () => {
     </QueryClientProvider>,
   );
 
-  expect(screen.getByRole("heading", { name: "Hola, Sofía" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Hola, Tomás" })).toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", { name: "Mesas de examen" }));
   fireEvent.click(screen.getByRole("button", { name: "Inscribirme a Programación II" }));
 
   expect(screen.getByRole("status")).toHaveTextContent("Inscripción confirmada");
-  expect(screen.getByRole("button", { name: "Ya estás inscripta a Programación II" })).toBeDisabled();
+  expect(screen.getByRole("button", { name: "Ya estás inscripto a Programación II" })).toBeDisabled();
 });

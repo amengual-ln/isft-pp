@@ -19,11 +19,11 @@ type ExamTable = {
 };
 
 const fakeStudent = {
-  firstName: "Sofía",
-  fullName: "Sofía Martínez",
-  initials: "SM",
-  studentId: "24.187",
-  degree: "Tecnicatura Superior en Desarrollo de Software",
+  firstName: "Tomás",
+  fullName: "Tomás Gómez",
+  initials: "TG",
+  studentId: "19",
+  degree: "Tecnicatura Superior en Ciencia de Datos e IA",
   plan: "Plan 2024",
 };
 
@@ -109,11 +109,10 @@ const subjects: Array<{
   { name: "Práctica Profesional", year: "3° año", status: "Pendiente", tone: "pending", grade: "—" },
 ];
 
-function PageHeader({ title, eyebrow, description }: { title: string; eyebrow: string; description: string }) {
+function PageHeader({ title, description }: { title: string; description: string }) {
   return (
     <header className="page-header">
       <div>
-        <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
         <p className="page-description">{description}</p>
       </div>
@@ -208,7 +207,6 @@ export function App() {
         {view === "inicio" && (
           <div className="view view-home">
             <PageHeader
-              eyebrow="Tu panel académico"
               title={`Hola, ${fakeStudent.firstName}`}
               description="Acá tenés lo importante para continuar tu carrera, sin vueltas."
             />
@@ -217,7 +215,6 @@ export function App() {
               <article className="progress-card">
                 <div className="card-heading">
                   <div>
-                    <p className="card-kicker">Avance de carrera</p>
                     <h2>Vas por un buen camino.</h2>
                   </div>
                   <span className="plan-tag">{fakeStudent.plan}</span>
@@ -249,7 +246,6 @@ export function App() {
               </article>
 
               <article className="attention-card">
-                <p className="card-kicker">Período abierto</p>
                 <h2>Inscripción a finales</h2>
                 <p>Tenés tres mesas disponibles. La primera cierra el 9 de septiembre.</p>
                 <button className="text-link" type="button" onClick={() => navigate("mesas")}>
@@ -261,7 +257,6 @@ export function App() {
             <section className="section-block">
               <div className="section-heading">
                 <div>
-                  <p className="card-kicker">Próximamente</p>
                   <h2>Tu agenda académica</h2>
                 </div>
                 <button className="quiet-button" type="button" onClick={() => navigate("mesas")}>
@@ -280,7 +275,7 @@ export function App() {
                     <h3>Bases de Datos</h3>
                     <p>18:30 · Aula 6</p>
                   </div>
-                  <span className="status-label confirmed">Inscripta</span>
+                  <span className="status-label confirmed">Inscripto</span>
                 </article>
                 <article className="agenda-item">
                   <time dateTime="2026-09-25">
@@ -302,7 +297,6 @@ export function App() {
         {view === "mesas" && (
           <div className="view">
             <PageHeader
-              eyebrow="Exámenes finales"
               title="Mesas disponibles"
               description="Consultá fechas, condiciones e inscribite desde un solo lugar."
             />
@@ -373,11 +367,11 @@ export function App() {
                         onClick={() => enroll(exam)}
                         aria-label={
                           isEnrolled
-                            ? `Ya estás inscripta a ${exam.subject}`
+                            ? `Ya estás inscripto a ${exam.subject}`
                             : `Inscribirme a ${exam.subject}`
                         }
                       >
-                        {isEnrolled ? "✓ Inscripta" : "Inscribirme"}
+                        {isEnrolled ? "✓ Inscripto" : "Inscribirme"}
                       </button>
                     </div>
                   </article>
@@ -401,7 +395,6 @@ export function App() {
         {view === "trayectoria" && (
           <div className="view">
             <PageHeader
-              eyebrow="Historia académica"
               title="Mi trayectoria"
               description="El estado de cada materia y tus resultados, siempre a mano."
             />
@@ -428,7 +421,6 @@ export function App() {
             <section className="subjects-section">
               <div className="section-heading">
                 <div>
-                  <p className="card-kicker">{fakeStudent.plan}</p>
                   <h2>Estado por materia</h2>
                 </div>
               </div>
